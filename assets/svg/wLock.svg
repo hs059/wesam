@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100.895" height="111.062" viewBox="0 0 100.895 111.062">
+  <defs>
+    <filter id="hexagonal" x="0" y="0" width="100.895" height="111.062" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.102"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_1342" data-name="Group 1342" transform="translate(-21 -273.133)">
+    <g transform="matrix(1, 0, 0, 1, 21, 273.13)" filter="url(#hexagonal)">
+      <path id="hexagonal-2" data-name="hexagonal" d="M91.912,63.536,72.94,30.68A8.589,8.589,0,0,0,65.5,26.385H27.56a8.591,8.591,0,0,0-7.439,4.295L1.151,63.536a8.594,8.594,0,0,0,0,8.591l18.971,32.859a8.591,8.591,0,0,0,7.439,4.3H65.5a8.589,8.589,0,0,0,7.438-4.3L91.912,72.126A8.6,8.6,0,0,0,91.912,63.536Z" transform="translate(118.28 6) rotate(90)" fill="#f7f7f7"/>
+    </g>
+    <path id="hexagonal-3" data-name="hexagonal" d="M88.222,62.044,70.012,30.508a8.244,8.244,0,0,0-7.14-4.123H26.454a8.246,8.246,0,0,0-7.14,4.123L1.1,62.044a8.249,8.249,0,0,0,0,8.246L19.314,101.83a8.246,8.246,0,0,0,7.14,4.123H62.872a8.244,8.244,0,0,0,7.14-4.123L88.222,70.29A8.25,8.25,0,0,0,88.222,62.044Z" transform="translate(137.616 281.001) rotate(90)" fill="#f1f1f1"/>
+    <path id="Path_12284" data-name="Path 12284" d="M24.022,13.963a3.9,3.9,0,0,1,3.9,3.9v7.809a3.9,3.9,0,0,1-3.9,3.9H8.4a3.9,3.9,0,0,1-3.9-3.9V17.867a3.9,3.9,0,0,1,3.9-3.9v-3.9a7.809,7.809,0,0,1,15.617,0Zm-7.809-9.11a5.206,5.206,0,0,1,5.206,5.206v3.9H11.007v-3.9a5.206,5.206,0,0,1,5.206-5.206Zm7.809,11.713H8.4a1.3,1.3,0,0,0-1.3,1.3v7.809a1.3,1.3,0,0,0,1.3,1.3H24.022a1.3,1.3,0,0,0,1.3-1.3V17.867A1.3,1.3,0,0,0,24.022,16.566Z" transform="translate(55.287 311.335)" fill="silver" fill-rule="evenodd"/>
+  </g>
+</svg>
