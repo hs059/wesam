@@ -1,11 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:wessam/firstScreen.dart';
 import 'package:wessam/secondScreen.dart';
 
-import 'ThirdScreen.dart';
-import 'fourthScreen.dart';
+import 'thirdScreen/ThirdScreen.dart';
+import 'fourthScreen/fourthScreen.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await precachePicture(
+      ExactAssetPicture(
+          SvgPicture.svgStringDecoder, 'assets/svg/btn.google.svg'),
+      null);
+  await precachePicture(
+      ExactAssetPicture(
+          SvgPicture.svgStringDecoder, 'assets/svg/wOnWay.svg'),
+      null);
+  await precachePicture(
+      ExactAssetPicture(
+          SvgPicture.svgStringDecoder, 'assets/svg/wLeftArrow.svg'),
+      null);  await precachePicture(
+      ExactAssetPicture(
+          SvgPicture.svgStringDecoder, 'assets/svg/wLock.svg'),
+      null);  await precachePicture(
+      ExactAssetPicture(
+          SvgPicture.svgStringDecoder, 'assets/svg/wNotification.svg'),
+      null);
   runApp(MyApp());
 }
 
@@ -13,6 +35,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+
     return MaterialApp(
 
       theme: ThemeData(

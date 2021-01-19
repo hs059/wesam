@@ -5,10 +5,10 @@ import 'package:flutter_svg/svg.dart';
 
 class GridItem extends StatelessWidget {
 final String nameItem,imageGridPath ;
-GridItem({@required this.nameItem,@required this.imageGridPath});
+final bool lock ;
+GridItem({@required this.nameItem,@required this.imageGridPath, this.lock = true});
   @override
   Widget build(BuildContext context) {
-
     return Row(
       children: [
         Container(
@@ -22,7 +22,7 @@ GridItem({@required this.nameItem,@required this.imageGridPath});
 
             children: [
               SvgPicture.asset(
-                imageGridPath,
+                lock?'assets/svg/wLock.svg': imageGridPath,
                 width: 82.9,
                 height: 93.2,
               ),

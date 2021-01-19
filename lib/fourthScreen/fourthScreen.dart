@@ -1,11 +1,11 @@
-
 import 'package:flutter/material.dart';
-import 'package:wessam/appBar.dart';
+import 'file:///E:/Programming/Dart/studyProjects/wessam/lib/fourthScreen/widgets/appBar.dart';
 
-import 'firstGrid.dart';
-import 'gridItem.dart';
+import 'widgets/firstGrid.dart';
+import 'widgets/gridItem.dart';
 
 class FourthScreen extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,9 +16,10 @@ class FourthScreen extends StatelessWidget {
         alignment: Alignment.topCenter,
         child: GridView.builder(
           itemBuilder: (context, index) {
-            return  GridItem(
-             imageGridPath: firstGridList[index].imagePath,
-             nameItem: firstGridList[index].name,
+            return GridItem(
+              imageGridPath: firstGridList[index].imagePath,
+              nameItem: firstGridList[index].name,
+              lock: firstGridList[index].lock,
             );
           },
           physics: const BouncingScrollPhysics(),
@@ -29,8 +30,7 @@ class FourthScreen extends StatelessWidget {
               crossAxisCount: 3,
               childAspectRatio: 0.8,
               mainAxisSpacing: 2,
-              crossAxisSpacing: 2
-          ),
+              crossAxisSpacing: 2),
         ),
       ),
     );

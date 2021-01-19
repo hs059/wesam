@@ -1,69 +1,80 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-enum HusainStATE {SLEAB , RUN , CODING}
-class NotificationPage  extends StatelessWidget {
 
+class NotificationPage extends StatelessWidget {
+  final bool voucher;
 
-  HusainStATE huss;
-   final bool voucher  ;
-  NotificationPage({this.voucher=true});
+  final String title, content;
+
+  final String contentVoucher;
+
+  final String voucherImagePath, badgeImagePath;
+
+  NotificationPage(
+      {this.voucher = true,
+      this.title,
+      this.content,
+      this.contentVoucher = '',
+      this.voucherImagePath,
+      this.badgeImagePath});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
-      Container(
+        Container(
           alignment: Alignment.center,
           height: 288.97,
           width: double.infinity,
           child: Stack(
             children: [
               SvgPicture.asset(
-                'assets/svg/wBackGround.svg',
+                voucherImagePath,
                 width: double.infinity,
               ),
-              voucher?  Container(
-                alignment: Alignment.bottomCenter,
-                child: Container(
-                  child: Stack(
-                    overflow: Overflow.visible,
-                    alignment: AlignmentDirectional.center,
-                    children: [
-                      Container(
-                        width: 172,
-                        height: 172,
-                        child: SvgPicture.asset(
-                          'assets/svg/wBurgers.svg',
-                          width: 172,
-                          height: 172,
+              voucher
+                  ? Container(
+                      alignment: Alignment.bottomCenter,
+                      child: Container(
+                        child: Stack(
+                          overflow: Overflow.visible,
+                          alignment: AlignmentDirectional.center,
+                          children: [
+                            Container(
+                              width: 172,
+                              height: 172,
+                              child: SvgPicture.asset(
+                                'assets/svg/wBurgers.svg',
+                                width: 172,
+                                height: 172,
+                              ),
+                            ),
+                            Positioned(
+                              top: -40,
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                ),
+                                child: SvgPicture.asset(
+                                  'assets/svg/btn.google.svg',
+                                  width: 84,
+                                  height: 84,
+                                ),
+                              ),
+                            )
+                          ],
                         ),
                       ),
-                      Positioned(
-                        top: -40,
-                        child:Container(
-                          decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                          ),
-                          child: SvgPicture.asset(
-                            'assets/svg/btn.google.svg',
-                            width: 84,
-                            height: 84,
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              )
-                  :   Container(
-                alignment: Alignment.bottomCenter,
-                child: SvgPicture.asset(
-                  'assets/svg/wTelescope.svg',
-                  width: 178.07,
-                  height: 200.2,
-                ),
-              )
+                    )
+                  : Container(
+                      alignment: Alignment.bottomCenter,
+                      child: SvgPicture.asset(
+                        badgeImagePath,
+                        width: 178.07,
+                        height: 200.2,
+                      ),
+                    )
             ],
           ),
         ),
@@ -73,7 +84,7 @@ class NotificationPage  extends StatelessWidget {
         Column(
           children: [
             Text(
-              voucher?'Voucher'  : 'Badge',
+              voucher ? 'Voucher' : 'Badge',
               style: TextStyle(
                 fontWeight: FontWeight.w500,
                 fontSize: 16,
@@ -81,7 +92,7 @@ class NotificationPage  extends StatelessWidget {
               ),
             ),
             Text(
-              voucher?'30% Off up to 10 JD':'Predictor',
+              title,
               style: TextStyle(
                 fontWeight: FontWeight.w500,
                 fontSize: 26,
@@ -109,7 +120,7 @@ class NotificationPage  extends StatelessWidget {
               height: 10,
             ),
             Text(
-              'You have reached level 2 now !',
+              content,
               style: TextStyle(
                 fontWeight: FontWeight.w300,
                 fontSize: 18,
@@ -118,28 +129,28 @@ class NotificationPage  extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             Visibility(
-                visible: voucher,
-                child:  Column(
-
-                  children: [
-                    SizedBox(
-                      height: 10,
+              visible: voucher,
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    contentVoucher,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                      color: Color(0xff171725),
                     ),
-                    Text(
-                      'Next Door Café',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
-                        color: Color(0xff171725),
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ],
-                ),)
+                    textAlign: TextAlign.center,
+                  ),
+                ],
+              ),
+            )
           ],
         ),
         SizedBox(
-          height:voucher?76: 100,
+          height: voucher ? 76 : 100,
         ),
         Text(
           'Share it with friends',
@@ -157,21 +168,21 @@ class NotificationPage  extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             iconText(
-            iconPath:  'assets/svg/btn.google.svg',
+              iconPath: 'assets/svg/btn.google.svg',
               title: 'WhatsApp',
             ),
             SizedBox(
               width: 53,
             ),
             iconText(
-              iconPath:  'assets/svg/btn.google.svg',
+              iconPath: 'assets/svg/btn.google.svg',
               title: 'WhatsApp',
             ),
             SizedBox(
               width: 53,
             ),
             iconText(
-              iconPath:  'assets/svg/btn.google.svg',
+              iconPath: 'assets/svg/btn.google.svg',
               title: 'WhatsApp',
             ),
           ],
@@ -179,7 +190,7 @@ class NotificationPage  extends StatelessWidget {
         SizedBox(
           height: 50,
         ),
-        buttonWessam (),
+        buttonWessam(),
       ],
     );
   }
@@ -210,8 +221,9 @@ class NotificationPage  extends StatelessWidget {
       ],
     );
   }
-  Widget buttonWessam (){
-    return  Row(
+
+  Widget buttonWessam() {
+    return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
@@ -228,14 +240,14 @@ class NotificationPage  extends StatelessWidget {
         Container(
           alignment: Alignment.center,
           height: 37,
-          padding: EdgeInsets.symmetric(horizontal:30,vertical: 10),
+          padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
           decoration: BoxDecoration(
             color: Color(0xffFFE600),
             borderRadius: BorderRadius.circular(60),
           ),
           child: Center(
             child: Text(
-              voucher? 'Details': 'My Badges',
+              voucher ? 'Details' : 'My Badges',
               style: TextStyle(
                 fontWeight: FontWeight.w300,
                 fontSize: 16,
@@ -244,7 +256,6 @@ class NotificationPage  extends StatelessWidget {
             ),
           ),
         ),
-
       ],
     );
   }
